@@ -15,7 +15,7 @@ SET NOCOUNT ON
 INSERT INTO dbo.Worker(EmployeeID, First_Name, Last_Name, Shift_Start, Shift_End, Machine_Start, Machine_End, Type_Of_Worker, Type_Of_Machine, Password_Worker) VALUES ( @EmployeeID, @First_Name, @Last_Name, @Shift_Start, @Shift_End, @Machine_Start, @Machine_End, @Type_Of_Worker, @Type_Of_Machine, @Password_Worker)
 END														
 GO
-EXEC usp_Insert_Worker @EmployeeID = 100, @First_Name = 'yashaswini',@Last_Name = 'k', @Shift_Start = '07:30', @Shift_End = '19:30', @Machine_Start = '11:00', @Machine_End = '12:00', @Type_Of_Worker = 'Regular', @Type_Of_Machine = 'Giga Press 1000', @Password_Worker = 'Adithya.V@123';
+EXEC usp_Insert_Worker @EmployeeID = 100, @First_Name = 'yashaswini',@Last_Name = 'k', @Shift_Start = '07:30', @Shift_End = '19:30', @Machine_Start = '11:00', @Machine_End = '12:00', @Type_Of_Worker = 'Regular', @Type_Of_Machine = 'Giga Press 1000', @Password_Worker = 'yashaswini.k@1224';
 SELECT * FROM dbo.Worker
 
 
