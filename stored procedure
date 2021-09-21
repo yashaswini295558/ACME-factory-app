@@ -31,4 +31,20 @@ SET NOCOUNT ON
 INSERT INTO dbo.Manager(Employee_ID, Machine_Total, Employee_Total) VALUES (@Employee_ID, @Machine_Total, @Employee_Total) 
 END 
 GO
-EXEC usp_insert_Manager @Employee_ID = '111'  , @Machine_Total = '05:00', @Employee_Total = '06:00'
+EXEC usp_insert_Manager @Employee_ID = '111'  , @Machine_Total = '06:00', @Employee_Total = '06:00'
+
+
+
+
+CREATE  PROCEDURE usp_Update_Manager 
+AS
+  SELECT m.Machine_Total
+  FROM Manager m 
+  WHERE m.Employee_ID ='111' 
+
+  BEGIN
+     UPDATE Manager SET Machine_Total = '05:00' 
+  END
+
+  SELECT * FROM Manager
+
