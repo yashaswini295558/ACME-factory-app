@@ -36,6 +36,22 @@ EXEC usp_insert_Manager @Employee_ID = '111'  , @Machine_Total = '06:00', @Emplo
 
 
 
+
+CREATE  PROCEDURE usp_Update_Worker 
+AS
+  SELECT w.Shift_End
+  FROM Worker w
+  WHERE w.EmployeeID ='111' 
+
+  BEGIN
+     UPDATE Worker SET Shift_End = '07:30' 
+  END
+
+  SELECT * FROM Worker
+
+
+
+
 CREATE  PROCEDURE usp_Update_Manager 
 AS
   SELECT m.Machine_Total
