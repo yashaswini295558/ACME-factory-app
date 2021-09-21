@@ -1,1 +1,34 @@
+CREATE PROCEDURE usp_Insert_Worker(
+    @EmployeeID INT,
+	@First_Name VARCHAR (50),
+    @Last_Name VARCHAR (25),
+    @Shift_Start TIME (0),
+    @Shift_End TIME (0),
+    @Machine_Start TIME (0),
+    @Machine_End TIME (0),
+	@Type_Of_Worker VARCHAR (50),
+	@Type_Of_Machine VARCHAR (50),
+	@Password_Worker VARCHAR (50))
+AS
+BEGIN
+SET NOCOUNT ON 
+INSERT INTO dbo.Worker(EmployeeID, First_Name, Last_Name, Shift_Start, Shift_End, Machine_Start, Machine_End, Type_Of_Worker, Type_Of_Machine, Password_Worker) VALUES ( @EmployeeID, @First_Name, @Last_Name, @Shift_Start, @Shift_End, @Machine_Start, @Machine_End, @Type_Of_Worker, @Type_Of_Machine, @Password_Worker)
+END														
+GO
+EXEC usp_Insert_Worker @EmployeeID = 100, @First_Name = 'yashaswini',@Last_Name = 'k', @Shift_Start = '07:30', @Shift_End = '19:30', @Machine_Start = '11:00', @Machine_End = '12:00', @Type_Of_Worker = 'Regular', @Type_Of_Machine = 'Giga Press 1000', @Password_Worker = 'Adithya.V@123';
+SELECT * FROM dbo.Worker
 
+
+
+CREATE PROCEDURE usp_insert_Manager(
+       @Employee_ID INT, 
+       @Machine_Total TIME (0), 
+       @Employee_Total TIME (0)) 
+     
+AS 
+BEGIN 
+SET NOCOUNT ON 
+INSERT INTO dbo.Manager(Employee_ID, Machine_Total, Employee_Total) VALUES (@Employee_ID, @Machine_Total, @Employee_Total) 
+END 
+GO
+EXEC usp_insert_Manager @Employee_ID = '111'  , @Machine_Total = '05:00', @Employee_Total = '06:00'
